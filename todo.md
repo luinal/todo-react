@@ -1,0 +1,2 @@
+- Basic login to save lists
+- Better and more responsive design

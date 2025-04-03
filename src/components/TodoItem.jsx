@@ -1,16 +1,27 @@
 // src/components/TodoItem.jsx
-function TodoItem({ todo, toggleComplete, deleteTodo }) {
+// Componente que renderiza um item individual da lista de tarefas
+// Props:
+// - todo: objeto com os dados da tarefa (id, text, completed)
+// - toggleComplete: função para marcar/desmarcar a tarefa como concluída
+// - deleteTodo: função para excluir a tarefa
+const TodoItem = ({ todo, toggleComplete, deleteTodo }) => {
   return (
-    <li>
-      <span
-        style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}
-        onClick={() => toggleComplete(todo.id)}
+    <li 
+      className={`todo-item ${todo.completed ? 'completed' : ''}`}
+      onClick={() => toggleComplete(todo.id)}
+    >
+      <span className="todo-text">{todo.text}</span>
+      <button 
+        className="delete-btn"
+        onClick={(e) => {
+          e.stopPropagation();
+          deleteTodo(todo.id);
+        }}
       >
-        {todo.text}
-      </span>
-      <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+        ×
+      </button>
     </li>
   );
-}
+};
 
 export default TodoItem;
