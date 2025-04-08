@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 function Form({ addTodo }) {
-    //Usamos USESTATE para criar um estado chamado INPUT e uma função SETINPUT para atualizar esse estado. Inicialmente, o valor de INPUT é uma string vazia.
+    //Usamos a função USESTATE para criar um estado chamado INPUT e uma função SETINPUT para atualizar esse estado. Inicialmente, o valor de INPUT é uma string vazia.
   const [input, setInput] = useState('');
 
   const handleSubmit = (e) => {

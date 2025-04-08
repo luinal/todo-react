@@ -38,8 +38,8 @@ function App() {
       setLists(lists.map(list => {
         if (list.id === activeList) {
           return {
-            ...list,
-            todos: [...list.todos, { id: Date.now(), text: text, completed: false }]
+            ...list, // Mantém o estado atual da lista
+            todos: [...list.todos, { id: Date.now(), text: text, completed: false }] // Adiciona a nova tarefa à lista
           };
         }
         return list;

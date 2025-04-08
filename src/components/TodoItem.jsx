@@ -7,14 +7,14 @@
 const TodoItem = ({ todo, toggleComplete, deleteTodo }) => {
   return (
     <li 
-      className={`todo-item ${todo.completed ? 'completed' : ''}`}
+      className={`todo-item ${todo.completed ? 'completed' : ''}`} 
       onClick={() => toggleComplete(todo.id)}
     >
       <span className="todo-text">{todo.text}</span>
       <button 
         className="delete-btn"
         onClick={(e) => {
-          e.stopPropagation();
+          e.stopPropagation(); // Previne que o evento de clique seja propagado para o componente pai
           deleteTodo(todo.id);
         }}
       >
